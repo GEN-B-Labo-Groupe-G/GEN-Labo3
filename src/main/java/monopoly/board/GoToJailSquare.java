@@ -4,18 +4,16 @@ import monopoly.Player;
 
 public class GoToJailSquare extends Square {
 
-    public GoToJailSquare(String name) {
+    private Square jail;
+
+    public GoToJailSquare(String name, Square jail) {
         super(name);
+        this.jail = jail;
     }
 
-    //?????????????
-    /*@Override
+    @Override
     public void landedOn(Player player) {
-        player.getPiece().setLocation(new Square("No idea") {
-            @Override
-            public void landedOn(Player player) {
-
-            }
-        });
-    }*/
+        System.out.println(player.getName() + " go to jail");
+        player.setLocation(jail);
+    }
 }

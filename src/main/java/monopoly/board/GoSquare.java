@@ -8,8 +8,11 @@ public class GoSquare extends Square {
         super(name);
     }
 
-    /*@Override
+    @Override
     public void landedOn(Player player) {
-        player.addCash(200);
-    }*/
+        int money = 200;
+        System.out.println(player.getName() + " collect $" + money);
+        player.addCash(money);
+        System.out.println(player.getName() + " money is now $" + player.getNetWorth());
+    }
 }

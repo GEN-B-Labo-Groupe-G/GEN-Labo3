@@ -2,7 +2,7 @@ package monopoly.board;
 
 import monopoly.Player;
 
-public class Square {
+public abstract class Square {
 
     private String name;
 
@@ -14,5 +14,5 @@ public class Square {
         return name;
     }
 
-    //public abstract void landedOn(Player player);
+    public abstract void landedOn(Player player);
 }
