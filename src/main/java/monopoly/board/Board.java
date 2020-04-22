@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 public class  Board {
     private ArrayList<Square> squares;
-    private String name;
 
     public Board(int size){
         this.squares = new ArrayList<>(Arrays.asList(new Square[40]));
@@ -19,13 +18,17 @@ public class  Board {
         squares.set(30, new GoToJailSquare("GoToJail", squares.get(10)));
     }
 
+    public int getSize() {
+        return squares.size();
+    }
+
     // Position relatif
     public Square getSquare(Square originLocation, int valueOffset) {
-        return this.getSquare((squares.indexOf(originLocation) + valueOffset) % squares.size());
+        return this.getSquare(Math.floorMod(squares.indexOf(originLocation) + valueOffset, squares.size()));
     }
 
     // Position absolue
-    public Square getSquare(int num) {
+    public Square getSquare(int num) throws IndexOutOfBoundsException {
         return squares.get(num);
     }
 }

@@ -36,7 +36,7 @@ public class MonopolyGame {
         this.board = new Board(40);
         this.cup = new Cup(2);
         for(int i = 0; i < nbPlayer; ++i) {
-            players.add(new Player(board, cup,i+1));
+            players.add(new Player(board, cup, "Player %d" + (i+1)));
         }
     }
 

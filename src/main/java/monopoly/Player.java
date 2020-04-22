@@ -10,12 +10,12 @@ public class Player {
     private int cash;
     private String name;
 
-    public Player(Board board, Cup cup, int numPlayer){
+    public Player(Board board, Cup cup, String name){
         this.board = board;
         this.location = board.getSquare(0);
         this.cup = cup;
         this.cash = 1500;
-        this.name = "Player " + numPlayer;
+        this.name = name;
     }
 
     public String getName() {

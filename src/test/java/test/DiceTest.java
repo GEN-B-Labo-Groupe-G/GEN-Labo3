@@ -5,8 +5,6 @@ import org.junit.jupiter.api.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DiceTest {
-    private int MAX_FACE_VALUE = 6;
-    private int MIN_FACE_VALUE = 1;
     private Dice dice;
 
     @BeforeAll
@@ -22,9 +20,11 @@ class DiceTest {
 
     @RepeatedTest(20)
     void testRoll(){
+        int MAX_FACE_VALUE = 6;
+        int MIN_FACE_VALUE = 1;
         System.out.println("Execution du test répété sur roll");
         dice.roll();
-        System.out.println("Face Value : " + dice.getFaceValue() + " | MIN : " + MIN_FACE_VALUE + " MAX : " + MAX_FACE_VALUE );
+        System.out.println("Face Value : " + dice.getFaceValue() + " | MIN : " + MIN_FACE_VALUE + " MAX : " + MAX_FACE_VALUE);
         Assertions.assertFalse( dice.getFaceValue() > MAX_FACE_VALUE, "Error, roll to high");
         Assertions.assertFalse( dice.getFaceValue() < MIN_FACE_VALUE, "Error, roll to low");
     }
