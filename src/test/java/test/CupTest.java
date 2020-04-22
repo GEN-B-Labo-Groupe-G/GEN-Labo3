@@ -1,11 +1,23 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : CupTest.java
+ Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Date        : 22.04.2020
+
+ But         : Classe CupTest ayant pour but de tester la classe Cup.java
+
+ Remarque(s) : -
+
+ -----------------------------------------------------------------------------------
+*/
+
 package test;
 
 import monopoly.Cup;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CupTest {
