@@ -1,17 +1,22 @@
 package monopoly.board;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class  Board {
     private ArrayList<Square> squares;
     private String name;
 
     public Board(int size){
-        this.squares = new ArrayList<Square>(size);
-        squares.add(0, new Square("Go"));
+        this.squares = new ArrayList<>(Arrays.asList(new Square[40]));
         for (int i = 1; i < size; ++i) {
-            squares.add(i, new Square("Square " + i));
+            if (i != 4 && i != 30) {
+                squares.set(i, new RegularSquare("Square " + i));
+            }
         }
+        squares.set(0, new GoSquare("Go"));
+        squares.set(4, new IncomeTaxSquare("Income Tax",10, 200));
+        squares.set(30, new GoToJailSquare("GoToJail", squares.get(10)));
     }
 
     // Position relatif

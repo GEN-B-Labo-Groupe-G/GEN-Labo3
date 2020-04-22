@@ -4,19 +4,22 @@ import monopoly.board.Board;
 import monopoly.board.Square;
 
 public class Player {
-    private Piece piece;
-    private Dice[] dices;
+    private Square location;
+    private Cup cup;
     private Board board;
     private int cash;
     private String name;
 
-    public Player(Board board, Dice[] dices, int numPlayer){
-        this.piece = new Piece(board.getSquare(0));
-        this.dices = dices;
+    public Player(Board board, Cup cup, int numPlayer){
         this.board = board;
+        this.location = board.getSquare(0);
+        this.cup = cup;
         this.cash = 1500;
         this.name = "Player " + numPlayer;
-        this.piece = new Piece(board.getSquare(0));
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void addCash(int income) {
@@ -24,29 +27,25 @@ public class Player {
     }
 
     public void takeTurn() {
-        int fv, fvTot = 0;
-        for (Dice dice : dices) {
-            dice.roll();
-            fv = dice.getFaceValue();
-            fvTot += fv;
-        }
-        System.out.println(name + " rolled " + fvTot);
-        Square oldLoc = piece.getLocation();
-        Square newLoc = board.getSquare(oldLoc, fvTot);
-        piece.setLocation(newLoc);
-        System.out.println(name + " landed on " + piece.getLocation().getName());
+        cup.roll();
+        int result = cup.getTotal();
+        System.out.println(name + " rolled " + result);
+        Square newLoc = board.getSquare(location, result);
+        location = newLoc;
+        System.out.println(name + " landed on " + location.getName());
+        newLoc.landedOn(this);
+    }
+
+    public void setLocation(Square location) {
+        this.location = location;
     }
 
     public int getNetWorth() {
         return cash;
     }
 
-    //What if 0$ left ?
+    //What if 0$ left ? debt I suppose ?
     public void reduceCash(int money) {
         this.cash -= money;
-    }
-
-    public Piece getPiece() {
-        return piece;
     }
 }

@@ -8,9 +8,9 @@ import java.util.Scanner;
 public class MonopolyGame {
     private final int MAX_ROUNDS = 20;
     private int roundCount;
-    private ArrayList<Player> players = new ArrayList<Player>();
+    private ArrayList<Player> players = new ArrayList<>();
     private Board board;
-    private Dice[] dices;
+    private Cup cup;
 
 
     public static int init() {
@@ -33,10 +33,10 @@ public class MonopolyGame {
             throw new RuntimeException("Number must be between 2 and 8");
         }
         this.roundCount = 0;
-        this.dices = new Dice[]{new Dice(), new Dice()};
         this.board = new Board(40);
+        this.cup = new Cup(2);
         for(int i = 0; i < nbPlayer; ++i) {
-            players.add(new Player(board, dices, i+1));
+            players.add(new Player(board, cup,i+1));
         }
     }
 
