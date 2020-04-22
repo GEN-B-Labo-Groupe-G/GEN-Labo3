@@ -1,3 +1,16 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : Player.java
+ Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Date        : 22.04.2020
+
+ But         : Classe Board ayant pour but de gérer la création du plateau avec ces cases
+
+ Remarque(s) : -
+
+ -----------------------------------------------------------------------------------
+*/
 package monopoly;
 
 import monopoly.board.Board;
@@ -10,6 +23,12 @@ public class Player {
     private int cash;
     private String name;
 
+    /**
+     * Constructeur permettant de définir un joueur
+     * @param board le plateau de jeu
+     * @param cup le cup contenant les dés
+     * @param numPlayer l'id du joueur
+     */
     public Player(Board board, Cup cup, int numPlayer){
         this.board = board;
         this.location = board.getSquare(0);
@@ -18,14 +37,25 @@ public class Player {
         this.name = "Player " + numPlayer;
     }
 
+    /**
+     * Getter retournant le nom du joueur
+     * @return nom du joueur
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Setter permettant d'ajouter un income au montant total du joueur
+     * @param income somme d'argent
+     */
     public void addCash(int income) {
         this.cash += income;
     }
 
+    /**
+     * Méthode takeTurn définissant les actions que doit faire un joueur
+     */
     public void takeTurn() {
         cup.roll();
         int result = cup.getTotal();
@@ -36,15 +66,27 @@ public class Player {
         newLoc.landedOn(this);
     }
 
+    /**
+     * Setter définissant la nouvelle position
+     * @param location
+     */
     public void setLocation(Square location) {
         this.location = location;
     }
 
+    /**
+     * Getter retournant le montant actuel net
+     * @return
+     */
     public int getNetWorth() {
         return cash;
     }
 
-    //What if 0$ left ? debt I suppose ?
+    /**
+     * Méthode reduceCash permettant de retirer l'argent du montant du joueur
+     * On suppose que si ce montant est négative, cela devient alors une dette
+     * @param money montant à soustraire
+     */
     public void reduceCash(int money) {
         this.cash -= money;
     }
