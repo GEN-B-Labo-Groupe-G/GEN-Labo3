@@ -1,10 +1,22 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : BoardTest.java
+ Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Date        : 22.04.2020
+
+ But         : Classe BoardTest ayant pour but de tester la classe Board.java
+
+ Remarque(s) : -
+
+ -----------------------------------------------------------------------------------
+*/
+
 package test;
 
 import monopoly.board.Board;
 import monopoly.board.Square;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class BoardTest {

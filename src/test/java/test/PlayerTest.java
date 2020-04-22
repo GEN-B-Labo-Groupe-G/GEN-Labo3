@@ -1,3 +1,18 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : PlayerTest.java
+ Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Date        : 22.04.2020
+
+ But         : Classe PlayerTest ayant pour but de tester la classe Player.java
+
+ Remarque(s) : -
+
+ -----------------------------------------------------------------------------------
+*/
+
+
 package test;
 
 import monopoly.Cup;
@@ -7,8 +22,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class PlayerTest {

@@ -29,7 +29,7 @@ public class RegularSquare extends Square {
     /**
      * Méthode landedOn définissant l'action à faire lorsque le joueur tombe sur
      * une case normale. Ne définit rien de particulier donc aucune action
-     * @param player
+     * @param player le joueur
      */
     @Override
     public void landedOn(Player player) {

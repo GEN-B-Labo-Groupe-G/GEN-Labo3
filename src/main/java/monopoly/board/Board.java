@@ -1,11 +1,29 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : Board.java
+ Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Date        : 22.04.2020
+
+ But         : Classe Board ayant pour but de gérer la création du plateau avec ses cases
+
+ Remarque(s) : -
+
+ -----------------------------------------------------------------------------------
+*/
+
 package monopoly.board;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class  Board {
+public class Board {
     private ArrayList<Square> squares;
 
+    /**
+     * Constructeur Board qui crée le plateau et les cases qu'elles soient régulières ou spéciales
+     * @param size nombre de cases du plateau
+     */
     public Board(int size){
         this.squares = new ArrayList<>(Arrays.asList(new Square[40]));
         for (int i = 1; i < size; ++i) {
@@ -18,16 +36,29 @@ public class  Board {
         squares.set(30, new GoToJailSquare("GoToJail", squares.get(10)));
     }
 
+    /**
+     * Getter retournant la taille du board
+     * @return la taille
+     */
     public int getSize() {
         return squares.size();
     }
 
-    // Position relatif
+    /**
+     * Méthode getSquare permettant d'obtenir la case en fonction d'une position relative
+     * @param originLocation la position d'origine
+     * @param valueOffset la valeur
+     * @return la case
+     */
     public Square getSquare(Square originLocation, int valueOffset) {
         return this.getSquare(Math.floorMod(squares.indexOf(originLocation) + valueOffset, squares.size()));
     }
 
-    // Position absolue
+    /**
+     * Méthode getSquare permettant d'obtenir la case en fonction d'une position absolue
+     * @param num le numéro
+     * @return la case
+     */
     public Square getSquare(int num) throws IndexOutOfBoundsException {
         return squares.get(num);
     }

@@ -1,8 +1,21 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : MonopolyGameTest.java
+ Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Date        : 22.04.2020
+
+ But         : Classe MonopolyGameTest ayant pour but de tester la classe MonopolyGame.java
+
+ Remarque(s) : -
+
+ -----------------------------------------------------------------------------------
+*/
+
 package test;
 
 import monopoly.MonopolyGame;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
