@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------------
  Laboratoire : 03
  Fichier     : Dice.java
- Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Auteur(s)   : Junod Christophe, M. D., Teofanovic Stefan
  Date        : 22.04.2020
 
  But         : Classe Dice ayant pour but de gérer les dés et leur action

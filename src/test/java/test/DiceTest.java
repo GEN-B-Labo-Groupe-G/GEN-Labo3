@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------------
  Laboratoire : 03
  Fichier     : DiceTest.java
- Auteur(s)   : Junod Christophe, Maillefer Dalia, Teofanovic Stefan
+ Auteur(s)   : Junod Christophe, M. D., Teofanovic Stefan
  Date        : 22.04.2020
 
  But         : Classe DiceTest ayant pour but de tester la classe Dice.java
